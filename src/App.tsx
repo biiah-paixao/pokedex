@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { FavoriteProvider } from "./favorites/contexts/FavoriteContext";
+import { MainRoutes } from "./routes";
 
-function App() {
+const queryClient = new QueryClient(
+  //   {
+  //   defaultOptions: {
+  //     queries: {
+  //       staleTime: 5000,
+  //       cacheTime: 1000 * 60 * 60 * 15,
+  //       retry: 10,
+  //       retryDelay: 1000,
+  //       refetchOnWindowFocus: true,
+  //     }
+  //   }
+  // }
+)
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+      <QueryClientProvider client={queryClient}>
+        <FavoriteProvider>
+          <Router>
+            <MainRoutes />
+          </Router>
+        </FavoriteProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </>
   );
-}
+};
 
 export default App;
