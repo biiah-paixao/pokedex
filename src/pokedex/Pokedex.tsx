@@ -20,11 +20,11 @@ export const Pokedex: React.FC<PokedexProps> = () => {
   return (
     <div>
       <AppBarComponent isRefetching={isRefetching}/>
-      <h1>Pokedex</h1>
       <Container maxWidth="lg">
       {!isLoading ? (
         <Box mt={10}>
           <Grid container spacing={2}>
+            Pokedex Deploy
             {data?.results.map((pokemon) => (
               <Grid xs={6} lg={3}>
                 <PokedexCard pokemon={pokemon} />
