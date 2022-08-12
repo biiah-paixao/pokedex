@@ -1,5 +1,5 @@
 name: "Deploy frontend to firebase"
-on: 
+on:
   push:
     branches:
       - master
@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkoup Repo
+      - name: Checkout Repo
         uses: actions/checkout@master
 
       - name: Install dependencies
@@ -18,8 +18,8 @@ jobs:
         run: yarn build
 
       - name: Deploy to Firebase
-        run: w9jds/firebase-action@master
+        uses: w9jds/firebase-action@master
         with:
           args: deploy
-        env: 
+        env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
