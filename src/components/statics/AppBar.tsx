@@ -5,8 +5,6 @@ import { MenuItem, Menu } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Box, LinearProgress } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useContext } from "react";
-import { FavoriteContext } from "../../favorites/contexts/FavoriteContext";
 import { FavoriteButton } from "../FavoriteButton";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import React from "react";
@@ -22,7 +20,6 @@ export const AppBarComponent: React.FC<AppBarProps> = ({
   isRefetching,
   page,
 }) => {
-  const { favorites } = useContext(FavoriteContext);
 
   const navigate = useNavigate();
 
