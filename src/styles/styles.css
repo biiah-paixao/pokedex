@@ -1,0 +1,62 @@
+:root {
+    --type-grass-color: #2cdab1;
+    --type-fire-color: #f7786b;
+    --type-water-color: #58abf6;
+    --type-poison-color: #9f5bba;
+    --type-fighting-color: #d56723;
+    --type-normal-color: #a4acaf;
+    --type-bug-color: #729f3f;
+    --type-ground-color: #ab9842;
+    --type-electric-color: #eed535;
+    --type-fairy-color: #fdb9e9;
+    --type-psychic-color: #f366b9;
+    --type-rock-color: #a38c21;
+    --type-ice-color: #51c4e7;
+    --type-ground-color: #ab9842;
+    --type-ghost-color: #7b62a3;
+  }
+
+.grass{ background-color: var(--type-grass-color)!important;}
+.fire{ background-color: var(--type-fire-color)!important;}
+.water{ background-color: var(--type-water-color)!important;}
+.poison{ background-color: var(--type-poison-color)!important;}
+.normal{ background-color: var(--type-normal-color)!important;}
+.fighting{ background-color: var(--type-fighting-color)!important;}
+.bug{ background-color: var(--type-bug-color)!important;}
+.ground{ background-color: var(--type-ground-color)!important;}
+.electric{ background-color: var(--type-electric-color)!important;}
+.fairy{ background-color: var(--type-fairy-color)!important;}
+.psychic{ background-color: var(--type-psychic-color)!important;}
+.rock{ background-color: var(--type-rock-color)!important;}
+.ghost{ background-color: var(--type-ghost-color)!important;}
+
+.card-container{
+    border-radius: 32px!important;
+    background-repeat: no-repeat!important;
+    background-size: 80% auto!important;
+    background-position: right bottom!important;
+    margin: 10px 5px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+@media (max-height: 768px) {
+  .card-container{
+    height: 175px;
+}
+}
+
+.card-content{
+    padding: 24px 24px 0;
+}
+
+.chip-box{
+    margin: 5px 0;
+}
+
+.chip{
+    height: 25px!important;
+    display: flex!important;
+    margin: 1px 0;
+}

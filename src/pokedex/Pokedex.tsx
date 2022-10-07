@@ -6,6 +6,7 @@ import {
   Container,
   Box,
   CircularProgress,
+  Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 import { useQuery } from "@tanstack/react-query";
@@ -19,21 +20,24 @@ export const Pokedex: React.FC<PokedexProps> = () => {
 
   return (
     <div>
-      <AppBarComponent isRefetching={isRefetching}/>
-      <h1>Pokedex</h1>
+      <AppBarComponent isRefetching={isRefetching} page={'home'}/>
+
       <Container maxWidth="lg">
+      <Typography variant="h4" component="h1" sx={{ ml: 2, fontWeight: "600" }}>
+            Pokedex
+      </Typography>
       {!isLoading ? (
-        <Box mt={10}>
+        <Box mt={4}>
           <Grid container spacing={2}>
             {data?.results.map((pokemon) => (
-              <Grid xs={6} lg={3}>
+              <Grid xs={6} md={4} lg={3}>
                 <PokedexCard pokemon={pokemon} />
               </Grid>
             ))}
           </Grid>
         </Box>
       ) : (
-        <div><CircularProgress /></div>
+        <div style={{textAlign:"center"}}><CircularProgress /></div>
       )}
       </Container>
     </div>
