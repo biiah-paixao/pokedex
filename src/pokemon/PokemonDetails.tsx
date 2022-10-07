@@ -56,7 +56,7 @@ export const PokemonDetails: React.FC<PokemonDetailsProps> = () => {
           <IconButton sx={{ color: "white" }} onClick={() => {
             isFavorite ? removePokemonFromFavorite() : addPokemontoFavorites()}} 
             aria-label="add to favorites">
-            <FavoriteBorderOutlinedIcon />
+            {isFavorite ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
           </IconButton>
         </Typography>
         <Typography color="white" variant="h6">#00{poke?.id}</Typography>
